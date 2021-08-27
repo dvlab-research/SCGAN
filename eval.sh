@@ -1,0 +1,1 @@
+python test.py --gpu_ids 0,1 --dataset celeba --config config/scgan_celeba-test.yml --fid --which_epoch best --visual_n 1

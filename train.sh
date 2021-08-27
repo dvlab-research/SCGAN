@@ -1,0 +1,1 @@
+python train.py --dataset celeba --dataset_mode celeba --gpu_ids 0,1 --netG scg --nThread 16 --tf_log --no_html --config config/scgan_celeba.yml

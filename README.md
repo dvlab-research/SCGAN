@@ -10,6 +10,49 @@ This repository gives the implementation of our semantic image synthesis method 
 
 ![framework](./media/framework-v4.png)
 
+## Usage
+
+```bash
+git clone https://github.com/dvlab-research/SCGAN.git
+cd SCGAN/code
+```
+
+To use this code, please install PyTorch 1.0 and Python 3+. Other dependencies can be installed by
+```bash
+pip install -r requirements.txt
+```
+
+### Dataset Preparation
+Please refer to [SPADE](https://github.com/NVlabs/SPADE) for detailed execution.
+
+### Testing
+1. Downloading pretrained models, then putting the folder containing model weights in the folder `./checkpoints`.
+
+2. Producing images with the pretrained models.
+```bash
+python test.py --gpu_ids 0,1,2,3 --dataset_mode [dataset] --config config/scgan_[dataset]_test.yml --fid --gt [gt_path] --visual_n 1
+```
+For example,
+```bash
+python test.py --gpu_ids 0,1,2,3 --dataset_mode celeba --config config/scgan_celeba-test.yml --fid --gt /data/datasets/celeba --visual_n 1
+```
+
+3. Visual results are stored at `./results/scgan_[dataset]/` by default.
+
+#### Pretrained Models (to be updated)
+|Dataset       |Download link     |
+|:-------------|:-----------------|
+|CelebAMask-HQ |[Baidu Disk](https://pan.baidu.com/s/1__AtIALtbv0H5IDAB8_sjA) (Code: face)|
+
+### Training
+Using `train.sh` to train new models. Or you can specify training options in `config/[config_file].yml`.
+
+## Key operators
+Our proposed dynamic computation units (spatial conditional convolution and normalization) are extended from conditionally parameterized convolutions [1]. We generalize the scalar condition into a spatial one and also apply these techniques to normalization.
+
+[comment]: ![scc](./media/scc-conv.png)![scn](./media/scc-norm.png)
+<img alt="scc-conv" src="./media/scc-conv.png" width="400"> <img alt="scc-norm" src="./media/scc-norm.png" width="400"> 
+
 ### Citation
 
 If our research is useful for you, please consider citing:
@@ -20,6 +63,14 @@ If our research is useful for you, please consider citing:
       booktitle={ICCV},
       year={2021}
     }
+
+## Acknowledgements
+This code is built upon [SPADE](https://github.com/NVlabs/SPADE), [Imaginaire](https://github.com/NVlabs/imaginaire), and [PyTorch-FID](https://github.com/mseitzer/pytorch-fid).
+
+### Reference
+```
+[1] Brandon Yang, Gabriel Bender, Quoc V Le, and Jiquan Ngiam. Condconv: Conditionally parameterized convolutions for efficient inference. In NeurIPS. 2019.
+```
 
 ### Contact
 
