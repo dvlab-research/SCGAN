@@ -26,7 +26,7 @@ dropblock: false
 db_prob: 0.2
 sampling: none
 netD: multiscale
-batchSize: 2
+batchSize: 8
 lambda_w_recon: 1.
 smooth: false
 use_vae: true
