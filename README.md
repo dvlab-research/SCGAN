@@ -49,9 +49,8 @@ Using `train.sh` to train new models. Or you can specify training options in `co
 
 ## Key operators
 Our proposed dynamic computation units (spatial conditional convolution and normalization) are extended from conditionally parameterized convolutions [1]. We generalize the scalar condition into a spatial one and also apply these techniques to normalization.
+![sc-ops](./media/sc-ops.png)
 
-[comment]: ![scc](./media/scc-conv.png)![scn](./media/scc-norm.png)
-<img alt="scc-conv" src="./media/scc-conv.png" width="400"> <img alt="scc-norm" src="./media/scc-norm.png" width="400"> 
 
 ### Citation
 
