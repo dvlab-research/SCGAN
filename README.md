@@ -1,8 +1,8 @@
-# Image synthesis via semantic synthesis
+# Image synthesis via semantic synthesis [[Project Page](https://shepnerd.github.io/scg/)]
 by [Yi Wang](https://shepnerd.github.io/), [Lu Qi](http://luqi.info), [Ying-Cong Chen](https://www.yingcong.me), [Xiangyu Zhang](), [Jiaya Jia](https://jiaya.me).
 
 ## Introduction
-This repository gives the implementation of our semantic image synthesis method in ICCV 2021 paper, '[Image synthesis via semantic synthesis]()'. To be updated.
+This repository gives the implementation of our semantic image synthesis method in ICCV 2021 paper, '[Image synthesis via semantic synthesis]()'.
 
 ![Teaser](./media/teaser-v2.png)
 
