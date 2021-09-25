@@ -564,7 +564,7 @@ def calculate_fid_given_paths(paths, batch_size, cuda, dims, output_file=None):
                                          dims, cuda)
     fid_value = calculate_frechet_distance(m1, s1, m2, s2)
 
-    if not output_file:
+    if output_file is not None:
         with open(output_file, 'at') as fp:
             fp.write(str(fid_value)+'\n')
 
