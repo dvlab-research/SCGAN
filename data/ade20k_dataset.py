@@ -43,7 +43,8 @@ class ADE20KDataset(Pix2pixDataset):
     # In ADE20k, 'unknown' label is of value 0.
     # Change the 'unknown' label to 255 to match other datasets.
     def postprocess(self, input_dict):
-        label = input_dict['label']
-        label = label - 1
-        label[label == -1] = self.opt.label_nc
-        input_dict['label'] = label.clamp(0, self.opt.label_nc)
+        #label = input_dict['label']
+        #label = label - 1
+        #label[label == -1] = self.opt.label_nc
+        #input_dict['label'] = label.clamp(0, self.opt.label_nc)
+        pass
