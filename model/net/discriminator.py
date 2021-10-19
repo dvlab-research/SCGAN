@@ -330,7 +330,7 @@ class FPSEMDiscriminator(BaseNetwork):
         return [feats, results]
 
 
-from model.ops.local import SpatialCondConv2dFast
+from model.ops.layer import SpatialCondConv2d
 
 
 class RoutingDiscriminator(BaseNetwork):
@@ -346,27 +346,27 @@ class RoutingDiscriminator(BaseNetwork):
         norm_D = opt.norm_D if spectral is False else opt.norm_D[8:]
         norm_layer = get_nonspade_norm_layer(opt, norm_D)
 
-        self.enc1 = SpatialCondConv2dFast(in_channels=input_nc, out_channels=nf, stride=2,
-                                                                   kernel_size=3, num_experts=num_experts_conv,
-                                                                   spectral=spectral)
+        self.enc1 = SpatialCondConv2d(in_channels=input_nc, out_channels=nf, stride=2,
+                                      kernel_size=3, num_experts=num_experts_conv,
+                                      spectral=spectral)
         self.enc11 = nn.Sequential(nn.InstanceNorm2d(nf, affine=False), nn.LeakyReLU(2e-1, True))
 
-        self.enc2 = SpatialCondConv2dFast(in_channels=nf, out_channels=nf*2, stride=2,
-                                          kernel_size=3, num_experts=num_experts_conv,
-                                          spectral=spectral)
+        self.enc2 = SpatialCondConv2d(in_channels=nf, out_channels=nf*2, stride=2,
+                                      kernel_size=3, num_experts=num_experts_conv,
+                                      spectral=spectral)
         self.enc21 = nn.Sequential(nn.InstanceNorm2d(nf*2, affine=False), nn.LeakyReLU(2e-1, True))
 
-        self.enc3 = SpatialCondConv2dFast(in_channels=nf*2, out_channels=nf*4, stride=2,
-                                          kernel_size=3, num_experts=num_experts_conv,
-                                          spectral=spectral)
+        self.enc3 = SpatialCondConv2d(in_channels=nf*2, out_channels=nf*4, stride=2,
+                                      kernel_size=3, num_experts=num_experts_conv,
+                                      spectral=spectral)
         self.enc31 = nn.Sequential(nn.InstanceNorm2d(nf*4, affine=False), nn.LeakyReLU(2e-1, True))
 
-        self.enc4 = SpatialCondConv2dFast(in_channels=nf*4, out_channels=nf*8, stride=2,
+        self.enc4 = SpatialCondConv2d(in_channels=nf*4, out_channels=nf*8, stride=2,
                                           kernel_size=3, num_experts=num_experts_conv,
                                           spectral=spectral)
         self.enc41 = nn.Sequential(nn.InstanceNorm2d(nf*8, affine=False), nn.LeakyReLU(2e-1, True))
 
-        self.enc5 = SpatialCondConv2dFast(in_channels=nf*8, out_channels=nf*8, stride=2,
+        self.enc5 = SpatialCondConv2d(in_channels=nf*8, out_channels=nf*8, stride=2,
                                           kernel_size=3, num_experts=num_experts_conv,
                                           spectral=spectral)
         self.enc51 = nn.Sequential(nn.InstanceNorm2d(nf*8, affine=False), nn.LeakyReLU(2e-1, True))
@@ -463,27 +463,27 @@ class SRoutingDiscriminator(BaseNetwork):
         norm_D = opt.norm_D if spectral is False else opt.norm_D[8:]
         norm_layer = get_nonspade_norm_layer(opt, norm_D)
 
-        self.enc1 = SpatialCondConv2dFast(in_channels=input_nc, out_channels=nf, stride=2,
+        self.enc1 = SpatialCondConv2d(in_channels=input_nc, out_channels=nf, stride=2,
                                                                    kernel_size=3, num_experts=num_experts_conv,
                                                                    spectral=spectral)
         self.enc11 = nn.Sequential(nn.InstanceNorm2d(nf, affine=False), nn.LeakyReLU(2e-1, True))
 
-        self.enc2 = SpatialCondConv2dFast(in_channels=nf, out_channels=nf*2, stride=2,
+        self.enc2 = SpatialCondConv2d(in_channels=nf, out_channels=nf*2, stride=2,
                                           kernel_size=3, num_experts=num_experts_conv,
                                           spectral=spectral)
         self.enc21 = nn.Sequential(nn.InstanceNorm2d(nf*2, affine=False), nn.LeakyReLU(2e-1, True))
 
-        self.enc3 = SpatialCondConv2dFast(in_channels=nf*2, out_channels=nf*4, stride=2,
+        self.enc3 = SpatialCondConv2d(in_channels=nf*2, out_channels=nf*4, stride=2,
                                           kernel_size=3, num_experts=num_experts_conv,
                                           spectral=spectral)
         self.enc31 = nn.Sequential(nn.InstanceNorm2d(nf*4, affine=False), nn.LeakyReLU(2e-1, True))
 
-        self.enc4 = SpatialCondConv2dFast(in_channels=nf*4, out_channels=nf*8, stride=2,
+        self.enc4 = SpatialCondConv2d(in_channels=nf*4, out_channels=nf*8, stride=2,
                                           kernel_size=3, num_experts=num_experts_conv,
                                           spectral=spectral)
         self.enc41 = nn.Sequential(nn.InstanceNorm2d(nf*8, affine=False), nn.LeakyReLU(2e-1, True))
 
-        self.enc5 = SpatialCondConv2dFast(in_channels=nf*8, out_channels=nf*8, stride=2,
+        self.enc5 = SpatialCondConv2d(in_channels=nf*8, out_channels=nf*8, stride=2,
                                           kernel_size=3, num_experts=num_experts_conv,
                                           spectral=spectral)
         self.enc51 = nn.Sequential(nn.InstanceNorm2d(nf*8, affine=False), nn.LeakyReLU(2e-1, True))
@@ -617,28 +617,28 @@ class SelfRoutingDiscriminator(BaseNetwork):
 
         self.r_adjust1 = nn.Conv2d(nf, num_experts_conv, kernel_size=1, stride=1)
 
-        self.enc2 = SpatialCondConv2dFast(in_channels=nf, out_channels=nf*2, stride=2,
+        self.enc2 = SpatialCondConv2d(in_channels=nf, out_channels=nf*2, stride=2,
                                           kernel_size=3, num_experts=num_experts_conv,
                                           spectral=spectral)
         self.enc21 = nn.Sequential(nn.InstanceNorm2d(nf*2, affine=False), nn.LeakyReLU(2e-1, True))
 
         self.r_adjust2 = nn.Conv2d(nf*2, num_experts_conv, kernel_size=1, stride=1)
 
-        self.enc3 = SpatialCondConv2dFast(in_channels=nf*2, out_channels=nf*4, stride=2,
+        self.enc3 = SpatialCondConv2d(in_channels=nf*2, out_channels=nf*4, stride=2,
                                           kernel_size=3, num_experts=num_experts_conv,
                                           spectral=spectral)
         self.enc31 = nn.Sequential(nn.InstanceNorm2d(nf*4, affine=False), nn.LeakyReLU(2e-1, True))
 
         self.r_adjust3 = nn.Conv2d(nf*4, num_experts_conv, kernel_size=1, stride=1)
 
-        self.enc4 = SpatialCondConv2dFast(in_channels=nf*4, out_channels=nf*8, stride=2,
+        self.enc4 = SpatialCondConv2d(in_channels=nf*4, out_channels=nf*8, stride=2,
                                           kernel_size=3, num_experts=num_experts_conv,
                                           spectral=spectral)
         self.enc41 = nn.Sequential(nn.InstanceNorm2d(nf*8, affine=False), nn.LeakyReLU(2e-1, True))
 
         self.r_adjust4 = nn.Conv2d(nf*8, num_experts_conv, kernel_size=1, stride=1)
 
-        self.enc5 = SpatialCondConv2dFast(in_channels=nf*8, out_channels=nf*8, stride=2,
+        self.enc5 = SpatialCondConv2d(in_channels=nf*8, out_channels=nf*8, stride=2,
                                           kernel_size=3, num_experts=num_experts_conv,
                                           spectral=spectral)
         self.enc51 = nn.Sequential(nn.InstanceNorm2d(nf*8, affine=False), nn.LeakyReLU(2e-1, True))
