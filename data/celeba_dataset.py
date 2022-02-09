@@ -27,10 +27,6 @@ class CelebADataset(Pix2pixDataset):
         root = opt.dataroot
         phase = 'val' if opt.phase == 'test' else 'train'
 
-        # all_images = make_dataset(root, recursive=True, read_cache=False, write_cache=False)
-        # image_paths = glob.glob(os.path.join(root, 'CelebA-HQ-img', '*.jpg'))
-        # label_paths = glob.glob(os.path.join(root, 'CelebAMaskHQ-mask', '*.png'))
-
         if phase == 'val':
             filter_file = 'test_list.txt'
         else:
@@ -47,14 +43,6 @@ class CelebADataset(Pix2pixDataset):
         for i in range(len(image_paths)):
             assert os.path.exists(image_paths[i])
             assert os.path.exists(label_paths[i])
-
-        # for p in all_images:
-        #     if '_%s_' % phase not in p:
-        #         continue
-        #     if p.endswith('.jpg'):
-        #         image_paths.append(p)
-        #     elif p.endswith('.png'):
-        #         label_paths.append(p)
 
         instance_paths = []  # don't use instance map for celeba
 

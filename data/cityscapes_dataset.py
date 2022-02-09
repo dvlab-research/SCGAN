@@ -51,8 +51,3 @@ class CityscapesDataset(Pix2pixDataset):
         return '_'.join(name1.split('_')[:3]) == \
             '_'.join(name2.split('_')[:3])
 
-    # def postprocess(self, input_dict):
-    #     label = input_dict['label']
-    #     label[label == -1] = self.opt.label_nc
-    #     label = label - 1
-    #     input_dict['label'] = label.clamp(0, self.opt.label_nc)
