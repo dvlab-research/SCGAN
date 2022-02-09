@@ -42,7 +42,9 @@ python test.py --gpu_ids 0,1,2,3 --dataset_mode celeba --config config/scgan_cel
 #### Pretrained Models (to be updated)
 |Dataset       |Download link     |
 |:-------------|:-----------------|
-|CelebAMask-HQ |[Baidu Disk](https://pan.baidu.com/s/1__AtIALtbv0H5IDAB8_sjA) (Code: face)|
+|CelebAMask-HQ|[Baidu Disk](https://pan.baidu.com/s/1__AtIALtbv0H5IDAB8_sjA) (Code: face)|
+|ADE20K|[Baidu Disk](https://pan.baidu.com/s/1F64NK8Kgz4zpl8ETjTVekA) (Code: n021)\| [Visual results](https://pan.baidu.com/s/1d-DkHen9MUp5AgWJKxCVJA) (Code: wu7b)|
+|COCO|[Baidu Disk](https://pan.baidu.com/s/1vRLRy3wsfoYH9GqjQuxV3Q) (Code: ss4b)\| [Visual results](https://pan.baidu.com/s/10dScbMEMxfCPpcW0ywsbMg) (Code: i4dw)|
 
 ### Training
 Using `train.sh` to train new models. Or you can specify training options in `config/[config_file].yml`.
