@@ -43,7 +43,7 @@ python test.py --gpu_ids 0,1,2,3 --dataset_mode celeba --config config/scgan_cel
 |Dataset       |Download link     |
 |:-------------|:-----------------|
 |CelebAMask-HQ|[Baidu Disk](https://pan.baidu.com/s/1__AtIALtbv0H5IDAB8_sjA) (Code: face)|
-|ADE20K|[Baidu Disk](https://pan.baidu.com/s/1F64NK8Kgz4zpl8ETjTVekA) (Code: n021)\| [Visual results](https://pan.baidu.com/s/1d-DkHen9MUp5AgWJKxCVJA) (Code: wu7b)|
+|ADE20K|[Baidu Disk](https://pan.baidu.com/s/1F64NK8Kgz4zpl8ETjTVekA) (Code: n021) or [Onedrive](https://pjlab-my.sharepoint.cn/:u:/g/personal/wangyi_pjlab_org_cn/EboHJ-o3CBhFtGxbzPCGZA0BQ6siKfhIEJZu_ao9NFwuVg?e=RZZsCl)\| [Visual results](https://pan.baidu.com/s/1d-DkHen9MUp5AgWJKxCVJA) (Code: wu7b) or [Onedrive](https://pjlab-my.sharepoint.cn/:u:/g/personal/wangyi_pjlab_org_cn/Ed5XJuzkAbNIi1yqhRF8rfQBNWFlDfiKYebOyecwofOt2g?e=ub49Nd)|
 |COCO|[Baidu Disk](https://pan.baidu.com/s/1vRLRy3wsfoYH9GqjQuxV3Q) (Code: ss4b)\| [Visual results](https://pan.baidu.com/s/10dScbMEMxfCPpcW0ywsbMg) (Code: i4dw)|
 
 ### Training
