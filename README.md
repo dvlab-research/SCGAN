@@ -42,9 +42,9 @@ python test.py --gpu_ids 0,1,2,3 --dataset_mode celeba --config config/scgan_cel
 #### Pretrained Models (to be updated)
 |Dataset       |Download link     |
 |:-------------|:-----------------|
-|CelebAMask-HQ|[Baidu Disk](https://pan.baidu.com/s/1__AtIALtbv0H5IDAB8_sjA) (Code: face)|
-|ADE20K|[Baidu Disk](https://pan.baidu.com/s/1F64NK8Kgz4zpl8ETjTVekA) (Code: n021) or [Onedrive](https://pjlab-my.sharepoint.cn/:u:/g/personal/wangyi_pjlab_org_cn/EboHJ-o3CBhFtGxbzPCGZA0BQ6siKfhIEJZu_ao9NFwuVg?e=RZZsCl)\| [Visual results](https://pan.baidu.com/s/1d-DkHen9MUp5AgWJKxCVJA) (Code: wu7b) or [Onedrive](https://pjlab-my.sharepoint.cn/:u:/g/personal/wangyi_pjlab_org_cn/Ed5XJuzkAbNIi1yqhRF8rfQBNWFlDfiKYebOyecwofOt2g?e=ub49Nd)|
-|COCO|[Baidu Disk](https://pan.baidu.com/s/1vRLRy3wsfoYH9GqjQuxV3Q) (Code: ss4b)\| [Visual results](https://pan.baidu.com/s/10dScbMEMxfCPpcW0ywsbMg) (Code: i4dw)|
+|CelebAMask-HQ|[Baidu Disk](https://pan.baidu.com/s/1__AtIALtbv0H5IDAB8_sjA) (Code: face) or [OneDrive](https://pjlab-my.sharepoint.cn/:u:/g/personal/wangyi_pjlab_org_cn/ESLqRGOn9o5InR-D9-mXSKoBUzqu7Tw1RPrWMIrpAXOS3g?e=IeP1dK)|
+|ADE20K|[Baidu Disk](https://pan.baidu.com/s/1F64NK8Kgz4zpl8ETjTVekA) (Code: n021) or [OneDrive](https://pjlab-my.sharepoint.cn/:u:/g/personal/wangyi_pjlab_org_cn/EboHJ-o3CBhFtGxbzPCGZA0BQ6siKfhIEJZu_ao9NFwuVg?e=RZZsCl)\| [Visual results](https://pan.baidu.com/s/1d-DkHen9MUp5AgWJKxCVJA) (Code: wu7b) or [OneDrive](https://pjlab-my.sharepoint.cn/:u:/g/personal/wangyi_pjlab_org_cn/Ed5XJuzkAbNIi1yqhRF8rfQBNWFlDfiKYebOyecwofOt2g?e=ub49Nd)|
+|COCO|[Baidu Disk](https://pan.baidu.com/s/1vRLRy3wsfoYH9GqjQuxV3Q) (Code: ss4b) or [OneDrive](https://pjlab-my.sharepoint.cn/:u:/g/personal/wangyi_pjlab_org_cn/EUPJ6S4YP3JPgFShi0d5sicBjryC0iPumPeS4TVEf6BFcw?e=dEY7j2)\| [Visual results](https://pan.baidu.com/s/10dScbMEMxfCPpcW0ywsbMg) (Code: i4dw) or [OneDrive](https://pjlab-my.sharepoint.cn/:u:/g/personal/wangyi_pjlab_org_cn/EdJoKEqRqd1IqkO0tRenyzkBwO0s6TXL185q9uuNfPCWug?e=NVlfCN)|
 
 ### Training
 Using `train.sh` to train new models. Or you can specify training options in `config/[config_file].yml`.
